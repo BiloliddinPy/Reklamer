@@ -1,0 +1,96 @@
+export const influencerDashboardStats = [
+  {
+    title: "Jami daromad",
+    value: "$45,200",
+    meta: "+22% oyda",
+    tone: "primary",
+    icon: "bar-chart",
+  },
+  {
+    title: "Buyurtmalar",
+    value: "128 ta",
+    meta: "Muvaffaqiyatli",
+    tone: "blue",
+    icon: "package",
+  },
+  {
+    title: "Reyting",
+    value: "4.9",
+    meta: "48 ta sharh",
+    tone: "emerald",
+    icon: "trending",
+  },
+  {
+    title: "Hisobda",
+    value: "$3,750",
+    meta: "Yechib olish",
+    tone: "dark",
+    icon: "dollar",
+  },
+] as const;
+
+export const influencerDashboardServices = [
+  {
+    id: 1,
+    platform: "instagram",
+    type: "Instagram Story + Post",
+    title: "Mahsulot ko'rsatib berish (Stories + Feed)",
+    description: "Mahsulotingizni Stories'da 24 soatlik tanitib, Feed'da doimiy post sifatida joylashtiramiz. Organik, tabiiy ko'rinish.",
+    price: 1200,
+    deliveryDays: 2,
+    views: "4.8M",
+    orders: 47,
+  },
+  {
+    id: 2,
+    platform: "instagram",
+    type: "Instagram Reels",
+    title: "Yumoristik Qisqa Video (30-60 sek)",
+    description: "Mahsulot yoki xizmatni o'zining original kulgili hikoyasiga ulab, yuqori sifatli REELS qilamiz. Auditoriya sevib kutib oladi.",
+    price: 2500,
+    deliveryDays: 4,
+    views: "4.8M",
+    orders: 31,
+  },
+  {
+    id: 3,
+    platform: "telegram",
+    type: "Telegram Kanal",
+    title: "Reklama yozig'i (Text Post)",
+    description: "Kanalda brendingizni qisqa, aniq va samarali tarzda taqdim etamiz. Havolalar va rasmlari bilan.",
+    price: 550,
+    deliveryDays: 1,
+    views: "1.2M",
+    orders: 83,
+  },
+] as const;
+
+export const influencerDashboardOrders = [
+  {
+    id: "ORD-2024",
+    brand: "Texnomart",
+    brandLogo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=100&auto=format&fit=crop",
+    service: "Instagram Reels",
+    amount: 2500,
+    status: "pending",
+    date: "2024-11-15",
+  },
+  {
+    id: "ORD-2023",
+    brand: "Uzum Market",
+    brandLogo: "https://images.unsplash.com/photo-1611174743420-3d7df880ce32?w=100&auto=format&fit=crop",
+    service: "Instagram Story + Post",
+    amount: 1200,
+    status: "completed",
+    date: "2024-11-10",
+  },
+  {
+    id: "ORD-2022",
+    brand: "Hamkor Bank",
+    brandLogo: "https://images.unsplash.com/photo-1541354329998-f4d9a9f9297a?w=100&auto=format&fit=crop",
+    service: "Telegram Kanal",
+    amount: 550,
+    status: "completed",
+    date: "2024-11-05",
+  },
+] as const;

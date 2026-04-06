@@ -1,0 +1,46 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: reklamer_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: reklamer
+      POSTGRES_PASSWORD: reklamer
+      POSTGRES_DB: reklamer
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - reklamer_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: reklamer_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - reklamer_network
+
+  backend:
+    build: ./backend
+    container_name: reklamer_backend
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    networks:
+      - reklamer_network
+
+volumes:
+  pgdata:
+
+networks:
+  reklamer_network:
+    driver: bridge
